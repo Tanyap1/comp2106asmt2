@@ -1,0 +1,31 @@
+
+<link rel='stylesheet' href='/stylesheets/employee.css' />
+
+
+<h1>{{title}}</h1>
+
+
+<table class="table">
+   
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Position</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    {{#each employees}}
+      <th scope="row">{{this.employeeid}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.address}}</td>
+      <td>{{this.position}}</td>
+    </tr>
+      {{/each}}
+   
+  </tbody>
+
+</table>
