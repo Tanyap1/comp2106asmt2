@@ -20,8 +20,27 @@ trim:true
         type:String,
         required:"employeeid is required",
         trim:true,
-    }
-   
+    },
+    startdate:{
+        type:Date,
+        required:"Date is required",
+        trim:true,
+    },
+    phone:{
+        type:String,
+        required:"Phone is required",
+        trim:true,
+    },
+    city:{
+        type:String,
+        required:"City is required",
+        trim:true,
+    },
+    status:{
+    type:String,
+    required:"Phone is required",
+    trim:true,
+}
 })
 
 //make it public

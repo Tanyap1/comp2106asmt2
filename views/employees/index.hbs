@@ -1,28 +1,42 @@
 
 <link rel='stylesheet' href='/stylesheets/employee.css' />
-
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 
 <h1>{{title}}</h1>
-
+<a href="/employees/create" class="btn">Add New Employee</a>
 
 <table class="table">
    
   <thead>
     <tr>
-      <th scope="col">Id</th>
+      <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Address</th>
+      <th scope="col">City</th>
+      <th scope="col">Phone Number</th>
       <th scope="col">Position</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">Status</th>
 
     </tr>
   </thead>
   <tbody>
     <tr>
     {{#each employees}}
-      <th scope="row">{{this.employeeid}}</th>
+      <th scope="row">
+        <a  href="/employees/edit/{{this._id}}">
+        {{this.employeeid}}
+      </a>
+      </th>
       <td>{{this.name}}</td>
       <td>{{this.address}}</td>
+       <td>{{this.city}}</td>
+      <td>{{this.phone}}</td>
       <td>{{this.position}}</td>
+      <td>{{this.startdate}}</td>
+       <td>{{this.status}}</td>
+      <td><a class="btndelete" href="/employees/delete/{{this._id}}"onclick="return Delete()">Delete</a></td>
+
     </tr>
       {{/each}}
    

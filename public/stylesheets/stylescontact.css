@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@200&family=Poppins&family=Roboto+Mono:wght@200&display=swap');
 body{
     background-color: antiquewhite;
-}
+    padding: 50px;
+    font: 14px ;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  a {
+    color:gold;
+  }
+  main{margin: 25px;}

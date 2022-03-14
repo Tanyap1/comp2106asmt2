@@ -1,0 +1,45 @@
+<link rel='stylesheet' href='/stylesheets/employee.css' />
+
+<h1>{{title}}</h1>
+<form method="post">
+<fieldset >
+    <label class="control-label col-2" for="name">Name: *</label>
+    <input name="name" id="name" required/>
+</fieldset>
+<fieldset >
+    <label class="control-label col-2" for="address">Address: *</label>
+    <input name="address" id="address" required/>
+</fieldset>
+<fieldset >
+    <label class="control-label col-2" for="address">City: *</label>
+    <input name="city" id="city" required/>
+</fieldset>
+<fieldset >
+    <label class="control-label col-2" for="phone">Phone Number: *</label>
+    <input name="phone" id="phone" type="tel" placeholder="123-450-6780" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+</fieldset>
+<fieldset >
+    <label class="control-label col-2" for="position">Position: *</label>
+    <input name="position" id="position" required/>
+</fieldset>
+<fieldset >
+    <label class="control-label col-2" for="employeeid">ID: *</label>
+    <input name="employeeid" id="employeeid" required/>
+</fieldset>
+<fieldset >
+    <label class="control-label col-2" for="startdate">Start Date: *</label>
+    <input name="startdate" id="startdate" type="date"required/>
+</fieldset>
+<fieldset >
+    <label class="control-label col-2" for="startdate">Status: *</label>
+    <select name="status" id="status">
+    <option value="employee" class="employee">employee</option>
+    <option value="contractor" class="contractor">contractor</option>
+    <option value="retired" class="retired">retired</option>
+    <option value="inactive" class="inactive">former</option>
+ 
+     </select>
+</fieldset>
+
+<button class="btn">SAVE</button>
+</form>

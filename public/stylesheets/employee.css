@@ -1,12 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@200&family=Poppins&family=Roboto+Mono:wght@200&display=swap');
 
-body {
-  padding: 50px;
-  font: 14px ;
+main {
+  font: 18px ;
   font-family: 'Montserrat', sans-serif;
+  background-color: antiquewhite;
+  margin: 5px;
 }
-
-a {
-  color: #00B7FF;
+a{
+  color: rgb(75, 75, 75);
 }
-main{margin: 25px;}
+.btn{
+  background-color: rgb(162, 144, 122);
+}
+fieldset{
+  margin: 10px;
+}
+.btndelete{
+  background-color: brown;
+  text-decoration: none;
+  color: aliceblue;
+  padding: 2%;
+}
+.btndelete:hover{
+  background-color: rgb(152, 151, 150);
+  color: black;
+}
+.edit{
+  color: black;
+  background-color: aliceblue;
+}
+.inactive{
+  background-color: brown;
+}
+.retired{
+background-color: orange;}
+.employee{
+  background-color: green;
+}

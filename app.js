@@ -13,10 +13,27 @@ const employees = require('./controllers/employees')
 
 
 var app = express();
+
+
+
 //used env file for db connection
 if(process.env.NODE_ENV !=='production'){
   require('dotenv').config()
 }
+
+//passport config
+
+const passport= require ('passport')
+const session = require('express-session')
+
+//enable session
+app.use(session({
+  secret:'could-hardcode-here',
+  resave:true,
+  saveUninitialized:false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 
 //mongoose
