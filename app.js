@@ -13,11 +13,16 @@ const employees = require('./controllers/employees')
 
 
 var app = express();
+//used env file for db connection
+if(process.env.NODE_ENV !=='production'){
+  require('dotenv').config()
+}
+
 
 //mongoose
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://comp2106:xungoo8a@comp2106.0v7ul.mongodb.net/comp2106?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASE_URL, {
 
 }).then((res)=>{
   console.log('connected to DB')
