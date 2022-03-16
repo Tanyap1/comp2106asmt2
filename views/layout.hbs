@@ -37,6 +37,20 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
+      <ul class="navbar-nav ms-auto">
+        {{#if user}}
+      <li class="nav-link">
+        <a class="nav-link active" href="#">{{user.username}}</a>
+        </li>
+        <li class="nav-link">
+        <a class="nav-link active" href="/auth/logout">Logout</a>
+              </li>
+        {{else}}
+        <li class="nav-link active" >
+          <a href="/auth/register">Register</a></li>
+          <li class="nav-link active"><a href="/auth/login">Login</a></li>
+        {{/if}}
+      </ul>
     </div>
   </div>
 </nav> 
@@ -67,13 +81,13 @@
 </a>
     </div>
     <div class="col-lg-4 col-xs-12 location">
-      <h4 class="mt-lg-0 mt-sm-4">Location</h4>
-      <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
-      <p class="mb-0"><i class="fa fa-phone"></i>(000) 000-0000</p>
+      <h4 class="mt-lg-0 mt-sm-5">Location</h4>
+      <p>90 Local St. Barrie Ontario</p>
+      <p class="mb"><i class="fa fa-phone"></i>(000) 000-0000</p>
       <p><i class="fa-solid fa-envelope-open"></i>tanya@gmail.com</p>
     </div>
   </div>
-  <div class="row mt-5">
+  <div class="row ">
     <div class="col copyright">
       <p class=""><small class="footer-text">© 2022. All Rights Reserved.</small></p>
     </div>

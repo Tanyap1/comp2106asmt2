@@ -2,41 +2,57 @@
 <link rel='stylesheet' href='/stylesheets/employee.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
-<h1>{{title}}</h1>
-<a href="/employees/create" class="btn">Add New Employee</a>
-
+<h1>Employee Panel</h1>
+{{#if user}}
+<a href="/employees/create" class="btn1">Add New Employee</a>
+{{/if}}
 <table class="table">
    
   <thead>
     <tr>
+      {{#if user}}
       <th scope="col">ID</th>
+      {{/if}}
+      <!--show only the name and positin for not users-->
       <th scope="col">Name</th>
+      <th scope="col">Position</th>
+      <!--show only the name and positin for not users-->
+      {{#if user}}
       <th scope="col">Address</th>
       <th scope="col">City</th>
       <th scope="col">Phone Number</th>
-      <th scope="col">Position</th>
       <th scope="col">Start Date</th>
       <th scope="col">Status</th>
-
+      {{/if}}
     </tr>
   </thead>
   <tbody>
     <tr>
     {{#each employees}}
+    {{#if ../user}}
       <th scope="row">
-        <a  href="/employees/edit/{{this._id}}">
-        {{this.employeeid}}
+    <a class="id"  href="/employees/edit/{{this._id}}">
+    {{this.employeeid}}
       </a>
-      </th>
+    {{/if}}
+    </th>
+      <!--show only the name and positin for not users-->
+
       <td>{{this.name}}</td>
+      <td>{{this.position}}</td>
+      <!--show only the name and positin for not users-->
+
+      {{#if ../user}}
+
       <td>{{this.address}}</td>
        <td>{{this.city}}</td>
       <td>{{this.phone}}</td>
-      <td>{{this.position}}</td>
       <td>{{this.startdate}}</td>
        <td>{{this.status}}</td>
+      {{/if}}
+       {{#if ../user}}
       <td><a class="btndelete" href="/employees/delete/{{this._id}}"onclick="return Delete()">Delete</a></td>
-
+        {{/if}}
     </tr>
       {{/each}}
    

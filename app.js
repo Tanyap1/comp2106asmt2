@@ -10,7 +10,8 @@ var users = require('./controllers/users');
 //add the employees 
 const employees = require('./controllers/employees')
 
-
+//add auth
+const auth = require('./controllers/auth')
 
 var app = express();
 
@@ -28,12 +29,20 @@ const session = require('express-session')
 
 //enable session
 app.use(session({
-  secret:'could-hardcode-here',
+  secret: process.env.SESSION_SECRET,//we can hard code the secret session as secret:process.env.SESSION_SECRET
   resave:true,
   saveUninitialized:false
 }))
+
 app.use(passport.initialize())
 app.use(passport.session())
+
+let User = require('./models/user')
+passport.use(User.createStrategy())
+
+// set up passport to read/write user data to/from the session object
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 //mongoose
@@ -62,7 +71,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/employees', employees)//map employees to the right controller
-
+app.use('/auth',auth)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

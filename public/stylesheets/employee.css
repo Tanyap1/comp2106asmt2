@@ -9,9 +9,20 @@ main {
 a{
   color: rgb(75, 75, 75);
 }
-.btn{
-  background-color: rgb(162, 144, 122);
+.btn1{background-color: gold;
+color: #090909;
+font-size:18px;
+font-weight: bold;
+
+text-decoration: none;
+border-radius: 10px;
+width: 50px;
+padding: 10px;}
+
+.id{
+  color: black;
 }
+
 fieldset{
   margin: 10px;
 }
@@ -19,7 +30,9 @@ fieldset{
   background-color: brown;
   text-decoration: none;
   color: aliceblue;
-  padding: 2%;
+  padding: 3%;
+  border-radius: 5px;
+
 }
 .btndelete:hover{
   background-color: rgb(152, 151, 150);
@@ -36,4 +49,7 @@ fieldset{
 background-color: orange;}
 .employee{
   background-color: green;
+}
+h1{
+  margin: 2%;
 }

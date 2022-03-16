@@ -6,7 +6,10 @@ body {
   background-color: antiquewhite;
 }
 
-
+ .register{
+margin-left: 46%;
+margin-bottom: 2%;
+}
 a {
   color: gold;
 }
@@ -21,7 +24,22 @@ a {
   .links:hover{
     color: #b8b8b8;
   }
-  .location{}
 
     i{font-size: 24px;}
-  
+  .btn{
+    background-color: gold;
+    color: #090909;
+    font-size:18px;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-left: 20%;
+  }
+  .form-group{
+    margin-left: 35%;
+  }
+  fieldset{
+    padding: 4px;
+  }
+  h1{
+    margin-left: 40%;
+  }
