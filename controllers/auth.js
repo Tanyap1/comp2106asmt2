@@ -46,6 +46,15 @@ router.post('/login',passport.authenticate('local',{
 }))
 
 
+//github
+router.get('/github',passport.authenticate('github',{scope:['user.email']}))
+
+router.get('/github/callback',passport.authenticate('github',{
+    failureRedirect:'/auth/login'}),(req,res)=>{
+        res.redirect('/employees')
+    }
+)
+
 //logout
 router.get('/logout', (req,res)=>{
     req.logOut()

@@ -1,14 +1,18 @@
-<h1>Login</h1>
+<h1 class= "offset-5"> Login</h1>
+<br/>
 {{#if messages}}
-<div class="alert alert-danger">
+<div class="offset-2" "alert alert-danger">
     Invalid Login
 </div>
 {{else}}
-    <div class="alert ">
+    <div class= "offset-5" "alert">
         Please Login 
     </div>
 {{/if}}
-<form method="post">
+<hr/>
+
+
+<form method="post" class="">
 <fieldset class="form-group">
 <label for="username" class="col-2 control-label">Username: *</label>
 <input name="username" id="username" required />
@@ -18,8 +22,11 @@
 <input name="password" id="password" type="password" required />
 </fieldset>
 <fieldset class="form-group">
-<button class="btn ">Login</button>
-<hr />
-        Need an account?  <a href="/auth/register" title="Register">Register</a>
+<button class=" btn ">Login</button>
+        
 </fieldset>
+ <hr/>
+     <a class="offset-5" href="/auth/github" ><img src="/images/github-signin.jpg" alt="sign in with github icon" width="200"/></a>
+     <p class="offset-5"> Need an account?  <a href="/auth/register" title="Register">Register</a></p>
+
 </form>
