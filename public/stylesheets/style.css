@@ -10,7 +10,10 @@ body {
   margin: 0;
   padding: 0;
 }
-
+li{
+  list-style: none;
+  color: antiquewhite;
+}
  .register{
 margin-left: 46%;
 margin-bottom: 2%;
