@@ -2,6 +2,10 @@
 
 <h1>{{title}}</h1>
 <form method="post">
+    <fieldset >
+    <label class="control-label col-2" for="employeeid">ID: *</label>
+    <input name="employeeid" id="employeeid" required value="{{employee.employeeid}}"/>
+</fieldset>
 <fieldset >
     <label class="control-label col-2" for="name">Name: *</label>
     <input name="name" id="name" required value="{{employee.name}}"/>
@@ -11,12 +15,23 @@
     <input name="address" id="address" required value="{{employee.address}}"/>
 </fieldset>
 <fieldset >
+    <label class="control-label col-2" for="city">City: *</label>
+    <input name="city" id="city" required value="{{employee.city}}"/>
+</fieldset>
+
+<fieldset >
     <label class="control-label col-2" for="position">Position: *</label>
     <input name="position" id="position" required value="{{employee.position}}"/>
 </fieldset>
 <fieldset >
-    <label class="control-label col-2" for="employeeid">ID: *</label>
-    <input name="employeeid" id="employeeid" required value="{{employee.employeeid}}"/>
+    <label class="control-label col-2" for="startdate">Start Date: *</label>
+    <input name="startdate" id="startdate" required value="{{employee.startdate}}"/>
 </fieldset>
+<fieldset >
+    <label class="control-label col-2" for="status">Status: *</label>
+    <input name="status" id="status" required value="{{employee.status}}"/>
+</fieldset>
+
+
 <button class="btn">SAVE</button>
 </form>

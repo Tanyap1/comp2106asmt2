@@ -4,6 +4,11 @@ body {
   font: 18px ;
   font-family: 'Montserrat', sans-serif;
   background-color: antiquewhite;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
 }
 
  .register{
@@ -16,8 +21,11 @@ a {
 
 .footer{
   background: #090909;
-  color:white;}
-
+  color:white;
+}
+.fa-circle-down{
+  font-size: 45px;
+}
   .links{
     text-decoration: none;
   }
@@ -25,7 +33,7 @@ a {
     color: #b8b8b8;
   }
 
-    i{font-size: 24px;}
+    i{font-size: 18px;}
   .btn{
     background-color: gold;
     color: #090909;
@@ -43,3 +51,271 @@ a {
   h1{
     margin-left: 40%;
   }
+
+
+  /*this is the home page*/
+
+  .img::before,
+.img::after {
+    content: "";
+    display: table; 
+}
+
+.img::after {
+    clear: both;
+}
+
+html {
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-weight: 900;
+  font-family: Roboto, sans-serif;
+
+}
+h2{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+p {
+  line-height: 1.5;
+}
+
+a, a:focus, a:active, a:visited {
+  color: #c3c0c0;
+  text-decoration: underline;
+
+}
+
+a:hover{
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.container-fluid {
+  padding: 0 1em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 996px;
+}
+
+#header {
+  background: linear-gradient(rgba(80, 73, 44, 0.65), rgb(210, 202, 152)),
+				url("/images/employees.jpg") no-repeat fixed center;
+	background-size: cover;
+	color: #fff;
+  height: 600px;
+}
+
+.support{
+  border-radius: 50%;
+  width: 200px;
+}
+
+.profile-image {
+  border-radius: 50%;
+  display: block;
+  max-width: 200px;
+  margin: 0 auto 1em;
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 3em;
+  margin-bottom: .15em;
+  text-align: center;
+}
+.arrow{
+  position: relative;
+  animation: down 5s infinite;
+}
+/*going down*/
+@keyframes down {
+  from {top: 50px;}
+  to {top: 100px;}
+}
+
+.header .lead, .header .arrow {
+  display: block;
+  text-align: center;
+}
+
+.header .lead {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin-bottom: 1em;
+}
+
+.header .arrow a {
+  color: rgb(18, 18, 18);
+  display: inline-block;
+  margin: 3%;
+}
+
+.employees{
+  background:rgb(184, 184, 184);
+}
+
+.intro .container, .features .container, .employees .container, .contact .container {
+  padding: 5em 0;
+}
+
+.intro, .features, .employees, .contact {
+  text-align: center;
+}
+
+.intro {
+  background-color: #605f5e;
+  color: #fff;
+}
+
+.intro a, .intro a:hover, .intro a:focus, .intro a:active, .intro a:visited {
+  color: #fff;
+}
+
+.features img {
+  display: block;
+  margin: 0 auto 1em;
+  max-width: 200px;
+}
+
+.features .col-3 {
+  margin: 3em auto;
+  width: 100%;
+}
+
+
+
+.gallery .gallery-image {
+  margin: 1em auto;
+  width: 100%;
+}
+
+.gallery .gallery-image img {
+  display: block;
+  height: auto;
+  padding: 6px;
+  width: 100%;
+  border-radius: 5%;
+}
+
+.contact form {
+  border-radius: 9px;
+  box-shadow: 8px 8px 20px rgba(0,0,0,.15);
+  padding: 1em;
+  margin-top: 1em;
+  background-color: rgb(243, 234, 223);
+
+}
+
+.contact form input, .contact form textarea {
+  border: none;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+
+.carousel img{
+  opacity: .5;
+}
+
+.wesupport{
+ background-color: rgb(196, 184, 168);
+
+}
+
+.contact form input[type="submit"] {
+  background-color: gold;
+  border-radius: 0;
+  color:black;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+
+/*Media Queries */
+
+@media (min-width: 768px) {
+  
+ 
+  
+  .header h1 {
+    font-size: 6em;
+  }
+  
+  .header .lead {
+    font-size: 3em;
+  }
+  
+  .features .col-3 {
+    float: left;
+    margin: 2em 5% 0 0;
+    padding: 0 1em;
+    width: 30%;
+  }
+  
+  .features .col-3:last-of-type {
+    margin-right: 0;
+  }
+  
+  .gallery .gallery-image {
+    float: left;
+    margin-right: 2.5%;
+    width: 31.6666666667%;
+  }
+  
+  .gallery .gallery-image:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  
+  .contact form {
+    padding: 3em 2em 2em;
+  }
+  
+  .contact form input[type="submit"] {
+    padding: 1em 3em;
+    width: auto;
+  }
+  
+  .contact form input.full-half {
+    float: left;
+    margin-right: 2.5%;
+    width: 48.75%;
+  }
+  
+  .contact form input.full-half:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  
+  .contact form textarea {
+    height: 12em;
+  }
+  
+}
+
+#rimg {
+  position: fixed;
+  top: 0;
+  left: 3%;
+  top: 8%;
+border-radius: 50%;} 
+#rimg2 {
+  position: fixed;
+  top: 0;
+  left: 9%;
+  top: 20%;
+border-radius: 50%;
+} 

@@ -1,18 +1,20 @@
 <h1 class= "offset-5"> Login</h1>
+  <div ><img src="/images/man.jpg" id="rimg" width="300"/></div>
+    <div ><img src="/images/People.jpg" id="rimg2" width="400"/></div>
+
 <br/>
 {{#if messages}}
-<div class="offset-2" "alert alert-danger">
+<div class="offset-2 alert alert-danger">
     Invalid Login
 </div>
 {{else}}
-    <div class= "offset-5" "alert">
+    <div class= "offset-5 alert">
         Please Login 
     </div>
 {{/if}}
-<hr/>
 
 
-<form method="post" class="">
+<form method="post" class="form">
 <fieldset class="form-group">
 <label for="username" class="col-2 control-label">Username: *</label>
 <input name="username" id="username" required />
@@ -27,6 +29,6 @@
 </fieldset>
  <hr/>
      <a class="offset-5" href="/auth/github" ><img src="/images/github-signin.jpg" alt="sign in with github icon" width="200"/></a>
-     <p class="offset-5"> Need an account?  <a href="/auth/register" title="Register">Register</a></p>
+     <p class="offset-5"> Need an account?  <a  href="/auth/register" title="Register">Register</a></p>
 
 </form>

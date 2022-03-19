@@ -1,10 +1,20 @@
-
 <link rel='stylesheet' href='/stylesheets/employee.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
-<h1>Employee Panel</h1>
+
+<div class="container-fluid header" id="header">
+  <div class="container">
+    <h1>{{title}}</h1>
+    <span class="lead">Welcome to our employee directory</span>
+
+    <span class="arrow" ><a href="#contact"><i class="fa-solid fa-circle-down"></i></a></span>
+  </div>
+</div>
+
+
+<h1 class="h1" >Employee Panel</h1>
 {{#if user}}
-<a href="/employees/create" class="btn1">Add New Employee</a>
+<a class="offset-5 btn1" href="/employees/create" >Add New Employee <i class="fa-solid fa-users"></i></a>
 {{/if}}
 <table class="table">
    
@@ -51,7 +61,14 @@
        <td>{{this.status}}</td>
       {{/if}}
        {{#if ../user}}
-      <td><a class="btndelete" href="/employees/delete/{{this._id}}"onclick="return Delete()">Delete</a></td>
+      <td>
+              <!--delete user-->
+        <a class="delete" href="/employees/delete/{{this._id}}"onclick="return Delete()"><i class="fa-solid fa-trash-can"></i></a>
+              
+              <!--edit user-->
+        <a class="delete" href="/employees/edit/{{this._id}}">  <i class="fa-solid fa-pen-to-square"></i> </a>
+
+        </td>
         {{/if}}
     </tr>
       {{/each}}
