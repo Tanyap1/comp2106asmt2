@@ -3,6 +3,7 @@
 
 <script src="salary-calculator/salary-calculator.js" charset="utf-8">
     </script>
+{{#unless user}}
 <div class="container-fluid header" id="header">
   <div class="container">
     <h1>{{title}}</h1>
@@ -11,7 +12,7 @@
     <span class="arrow" ><a href="#contact"><i class="fa-solid fa-circle-down"></i></a></span>
   </div>
 </div>
-
+{{/unless}}
 
 <h1 class="h1" >Employee Panel</h1>
 {{#if user}}
@@ -27,11 +28,12 @@
       <!--show only the name and positin for not users-->
       <th scope="col">Name</th>
       <th scope="col">Position</th>
+      <th scope="col">Phone Number</th>
+
       <!--show only the name and positin for not users-->
       {{#if user}}
       <th scope="col">Address</th>
       <th scope="col">City</th>
-      <th scope="col">Phone Number</th>
       <th scope="col">Start Date</th>
       <th scope="col">Status</th>
       {{/if}}
@@ -52,12 +54,12 @@
       <td>{{this.name}}</td>
       <td>{{this.position}}</td>
       <!--show only the name and positin for not users-->
+      <td>{{this.phone}}</td>
 
       {{#if ../user}}
 
       <td>{{this.address}}</td>
        <td>{{this.city}}</td>
-      <td>{{this.phone}}</td>
       <td>{{this.startdate}}</td>
        <td>{{this.status}}</td>
       {{/if}}
