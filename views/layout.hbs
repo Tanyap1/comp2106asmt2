@@ -15,7 +15,7 @@
    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
   <div class="container-fluid">
 <a href="/">
-<img src="/images/logo.png" alt="logo" width="80" height="50">         <!--logo-->
+<img src="/images/logo.png" alt="logo" width="80" height="50"> <!--logo-->
 
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,8 @@
         </li>
       </ul>
       <ul class="navbar-nav ms-auto">
-        {{#if user}}
+        {{#if user}}        <!-- if user then show the name of the user    -->
+
       <li class="nav-link">
         <a class="nav-link active" href="#">{{user.username}}</a>
         </li>
