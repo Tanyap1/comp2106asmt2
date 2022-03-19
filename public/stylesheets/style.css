@@ -211,13 +211,13 @@ a:hover{
   width: 100%;
   border-radius: 5%;
 }
-
+/*contact form */
 .contact form {
   border-radius: 9px;
   box-shadow: 8px 8px 20px rgba(0,0,0,.15);
   padding: 1em;
   margin-top: 1em;
-  background-color: rgb(243, 234, 223);
+  background-color: rgb(192, 177, 159);
 
 }
 
@@ -230,7 +230,7 @@ a:hover{
   width: 100%;
 }
 
-
+/*carousel*/
 .carousel img{
   opacity: .5;
 }
@@ -309,6 +309,7 @@ a:hover{
   
 }
 
+/*images in login and register page*/
 #rimg {
   position: fixed;
   top: 0;

@@ -87,9 +87,9 @@ router.get('/edit/:_id',isAuthenticated, (req, res)=>{
 })
 
 //post the changes we made in the edit
-router.get('/edit/:_id', (req, res)=>{
-Employee.findByIdAndUpdate({ _id: req.params._id}, req.body, null, (err,employee)=>{
-    if(err){
+router.post('/edit/:_id', (req, res)=>{
+Employee.findByIdAndUpdate({ _id: req.params._id}, req.body, null, (err, employee)=>{
+    if(err){//if error show it is not redirect to emmployees index
         console.log(err)
     }else{
         res.redirect('/employees')
