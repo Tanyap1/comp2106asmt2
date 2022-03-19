@@ -3,6 +3,9 @@ var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 const router=express.Router()
 const passport=require('passport')
 const User=require('../models/user')
+const findOrCreate = require("mongoose-findorcreate");
+
+
 
 //registration
 router.get('/register', (req,res)=>{
