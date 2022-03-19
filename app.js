@@ -3,9 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const findOrCreate = require("mongoose-findorcreate");
-
-
 
 
 
@@ -90,10 +87,28 @@ passport.use(new GoogleStrategy({
   callbackURL:process.env.GOOGLE_CALLBACK_URL,
   passReqToCallback   : true
 },
-function(request, accessToken, refreshToken, profile, done) {
-  User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    return done(err, user);
-  });
+async(accessToken, refreshToken,profile, callback)=>{
+  //if user exists 
+  try{
+    const user = await User.findOne({oauthId:profile.id})
+ if (user){
+   return callback(null,user)
+ }else {
+  //if not exist it is a new one and we create new user 
+  const newUser = new User({
+    username:profile.username,
+    oauthProvider:'Google',
+    oauthId:profile.id
+  })
+  const savedUser = await newUser.save()
+    callback(null,savedUser)
+  
+ }
+ }
+ catch(err){
+   callback(err)
+ }
+  
 }
 ));
 
