@@ -1,4 +1,5 @@
 const express = require('express')
+var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 const router=express.Router()
 const passport=require('passport')
 const User=require('../models/user')
@@ -60,5 +61,17 @@ router.get('/logout', (req,res)=>{
     req.logOut()
     res.redirect('/auth/login')
 })
+
+
+//google
+router.get('/google',passport.authenticate('google',{scope:['email','profile']}))
+
+router.get('/google/callback',
+passport.authenticate('google',{
+    failureRedirect:'/auth/login'}),(req,res)=>{
+        res.redirect('/employees')
+    }
+)
+
 
 module.exports=router

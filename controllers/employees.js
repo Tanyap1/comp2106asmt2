@@ -97,4 +97,11 @@ Employee.findByIdAndUpdate({ _id: req.params._id}, req.body, null, (err,employee
 })
 })
 
+
+
+
+
+
+
+
 module.exports = router

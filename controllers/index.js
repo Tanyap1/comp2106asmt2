@@ -12,10 +12,13 @@ router.get('/about',(req,res)=>{
 }
 
 )
-//contct us
+//contact us
 router.get('/contact',(req,res)=>{
   res.render('contact',{title: 'Contact Us',user: req.user })
 }
 
 )
+
+
+
 module.exports = router;

@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+
 var index = require('./controllers/index');
 var users = require('./controllers/users');
 
@@ -76,6 +78,39 @@ passport.use(new gitHubStrategy({
     
   }
 ))
+//google
+var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+
+passport.use(new GoogleStrategy({
+  clientID:process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL:process.env.GOOGLE_CALLBACK_URL,
+  passReqToCallback   : true
+},
+async(accessToken, refreshToken,profile, callback)=>{
+  //if user exists 
+  try{
+    const user = await User.findOne({oauthId:profile.id})
+ if (user){
+   return callback(null,user)
+ }else {
+  //if not exist it is a new one and we create new user object
+  const newUser = new User({
+    username:profile.username,
+    oauthProvider:'Google',
+    oauthId:profile.id
+  })
+  const savedUser = await newUser.save()
+    callback(null,savedUser)
+  
+ }
+ }
+ catch(err){
+   callback(err)
+ }
+  
+}
+));
 
 
 //mongoose
@@ -104,7 +139,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/employees', employees)//map employees to the right controller
-app.use('/auth',auth)
+app.use('/auth',auth),
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
