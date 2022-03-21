@@ -1,6 +1,28 @@
 //import express and create router 
 const express = require ('express')
 const router = express.Router()
+const multer = require ('multer')//upload files
+
+//storage 
+
+const storage = multer.diskStorage({
+    destination:function (request,file,callback){
+        callback(null, './public/uploads/');
+    },
+
+    filename:function(request,file,callback){
+        callback(null, Date.now() + file.originalname)
+    },
+})
+
+//uplload formulter
+const upload=multer({
+    storage:storage,
+    limits:{
+        fieldSize:1024*1024*3,
+
+    }
+})
 //import the model
 
 const Employee = require('../models/emloyee')
@@ -45,7 +67,7 @@ router.get('/create', isAuthenticated, (req, res)=>{
 })
 
 //post create method
-router.post('/create',isAuthenticated, (req,res)=>{
+router.post('/create', upload.single('file'),isAuthenticated, (req,res)=>{
     Employee.create(req.body,(err, employee)=>{
 if(err){
     console.log(err)
@@ -57,7 +79,7 @@ else{
     
 })
 //delete get
-router.get('/delete/:_id',isAuthenticated, (req, res)=>{
+router.get('/delete/:_id',upload.single('file'),isAuthenticated, (req, res)=>{
     Employee.remove({ _id: req.params._id },(err) => {
         if(err){
             console.log(err)
@@ -69,7 +91,7 @@ router.get('/delete/:_id',isAuthenticated, (req, res)=>{
 })
 
 //edit
-router.get('/edit/:_id',isAuthenticated, (req, res)=>{
+router.get('/edit/:_id',upload.single('file'),isAuthenticated, (req, res)=>{
     Employee.findById(req.params._id, (err, employee)=>{
         if (err){
             console.log(err)

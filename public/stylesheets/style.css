@@ -93,7 +93,7 @@ p {
 }
 
 a, a:focus, a:active, a:visited {
-  color: #c3c0c0;
+  color: #5b5a5a;
   text-decoration: underline;
 
 }
@@ -208,9 +208,9 @@ a:hover{
   display: block;
   height: auto;
   padding: 6px;
-  width: 100%;
   border-radius: 5%;
 }
+
 /*contact form */
 .contact form {
   border-radius: 9px;

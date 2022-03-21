@@ -1,7 +1,7 @@
 <link rel='stylesheet' href='/stylesheets/employee.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
-<script src="salary-calculator/salary-calculator.js" charset="utf-8">
+<script src="javascripts/salary-calculator/salary-calculator.js" charset="utf-8">
     </script>
         <!--if user do not show up -->
 
@@ -17,16 +17,26 @@
 {{/unless}}
         <!-- end if user do not show up -->
 
-<h1 class="h1" >Employee Panel</h1>
 {{#if user}}
-<a class="offset-5 btn1" href="/employees/create" >Add New Employee <i class="fa-solid fa-users"></i></a>
+<h1 class="h1" >Employee Panel</h1>
+
+       
 {{/if}}
+{{#if user}} <!-- add employee if user -->
+<div class="addemployee">
+<a class="offset-5 btn1" href="/employees/create" >Add New Employee <i class="fa-solid fa-users"></i></a>
+</div>
+{{/if}}
+
 <table class="table">
    
   <thead>
     <tr>
       {{#if user}}
+
       <th scope="col">ID</th>
+      <th scope="col"><!--files--></th>
+
       {{/if}}
       <!--show only the name and positin for not users-->
       <th scope="col">Name</th>
@@ -50,10 +60,15 @@
     <a class="id"  href="/employees/edit/{{this._id}}">
     {{this.employeeid}}
       </a>
-    {{/if}}
-    </th>
-      <!--show only the name and positin for not users-->
+    <!--end edit user-->
 
+    </th>
+    <td><a class="file"  href="/employees/edit/{{this._id}}">
+  
+      <i class="fa-solid fa-file-arrow-up"></i></a></td>
+
+      <!--show only the name and positin for not users-->
+{{/if}}
       <td>{{this.name}}</td>
       <td>{{this.position}}</td>
       <!--show only the name and positin for not users-->
@@ -85,10 +100,9 @@
 <div>
 
 </div>
- <!--    <p>Salary Calculator custom integration</p>
+  <p>Salary Calculator custom integration</p>
 
 </div>
-my calc faild. 
  <div id="salary-calculator-container">
     </div>
     <script charset="utf-8">

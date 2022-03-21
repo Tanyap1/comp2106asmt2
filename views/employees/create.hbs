@@ -1,7 +1,11 @@
 <link rel='stylesheet' href='/stylesheets/employee.css' />
 
 <h1>{{title}}</h1>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
+<fieldset>
+    <label class="control-label col-2" for="file">Upload Files </label>
+    <input type="file" name="file" id="file"/>
+</fieldset>
 <fieldset >
     <label class="control-label col-2" for="name">Name: *</label>
     <input name="name" id="name" required/>
