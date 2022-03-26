@@ -1,8 +1,7 @@
 <link rel='stylesheet' href='/stylesheets/employee.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-<script src="javascripts/salary-calculator/salary-calculator.js" charset="utf-8">
-    </script>
         <!--if user do not show up -->
 
 {{#unless user}}
@@ -100,16 +99,11 @@
 <div>
 
 </div>
-  <p>Salary Calculator custom integration</p>
 
 </div>
  <div id="salary-calculator-container">
     </div>
-    <script charset="utf-8">
-      SalaryCalculator.init(
-        document.getElementById("salary-calculator-container")
-      )
-    </script>-->
+    
 
    {{#unless user}}
    <div class="container-fluid contact" id="contact">
@@ -129,3 +123,66 @@
   </div>
 </div>
 {{/unless}}
+
+<!--the my planned calc is failed i dont know why and how to implament , decided to hard code a simply wage calculator 
+when we have 52 weeks a years-->
+{{#if user}}
+<h1 class="h1">Salary calculator</h1>
+<i class="fa-solid fa-calculator"></i>
+
+<div class="calculator">
+ <label class="wage" for="wage">Enter Hourly Wage:</label>
+  <input class="wage" type="text" name="wage" id="wage" value="0.00"><br /><br />
+  <label class="wage" for="hours">Hours Worked:</label>
+  <input class="wage" type="text" name="hours" id="hours" value="00"><br /><br />
+  <button class=" btn2" value="calculate" onclick="calcSalary()">Calculate</button><br />
+  <p class="result " id="results"></p>
+</div>
+
+<p class="general">**The annual net income is calculated by subtracting the amounts related to the tax (Canada Tax and Ontario Tax), <br/>
+  the Ontario surtax, the Ontario Health Preium, the Canadian Pension Plan, the Employment Insurance.</p>
+<p class="note">Gross annual income - Taxes - Surtax - Health Premium - CPP - EI = Net annual salary
+
+</p>
+
+<div class="chart">
+<!--the code from chart.js-->
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+</div>
+<script>
+var xValues = ["Accountant", "Controller", "Sale Associate", "PM", "General Manager", "Network Engineer", "Network Admin", "QA Tester" , "Backend Developer", "Frontend Developer"];
+var yValues = [72280, 110000, 62568, 78526, 73525, 136752, 72224, 85625, 94109, 75000 ];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145",
+  "#AD23AD",
+  "#23AD23",
+  "#AD8236",
+  "#3662AD",
+  "##80AD45"
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Salaries by Position"
+    }
+  }
+});
+</script>
+
+
+
+ {{/if}}

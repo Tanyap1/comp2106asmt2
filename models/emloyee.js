@@ -2,7 +2,6 @@ const mongoose=require('mongoose')//we required the mongoose
 
 let employeeSchema = new mongoose.Schema({
     name: {
-
 type:String,
 required:'name is required',
 trim:true
@@ -40,6 +39,10 @@ trim:true
     type:String,
     required:"Phone is required",
     trim:true,
+},
+file:{
+    type:String,
+    
 }
 })
 

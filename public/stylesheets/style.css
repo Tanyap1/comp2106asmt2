@@ -45,6 +45,15 @@ a {
     margin-top: 3%;
     margin-left: 14%;
   }
+  .btn2{
+    background-color: gold;
+    color: #090909;
+    font-size:18px;
+    font-weight: bold;
+    border-radius: 8px;
+    width: fit-content;
+
+  }
   .form-group{
     margin-left: 35%;
   }
@@ -54,6 +63,42 @@ a {
   h1{
     margin-left: 40%;
   }
+
+  /*calc style*/
+.calculator{
+  text-align: center;
+  margin-top: 2px;
+
+}
+.result{
+  font-size: 80px;
+font-weight: bold;
+  color: gold;
+}
+
+.fa-calculator{
+  font-size: 80px;
+margin-left: 45%;
+padding:2px;
+color: gold;
+}
+
+.general{
+  text-align: center;
+}
+.note{
+  margin-left: 30%;
+  border:solid 2px lightslategrey;
+  width: fit-content;
+  background-color: #fff;
+  font-weight: bold;
+}
+/*chart*/
+
+.chart{
+  margin-left: 34%;
+
+}
 
 
   /*this is the home page*/
@@ -323,3 +368,22 @@ border-radius: 50%;}
   top: 20%;
 border-radius: 50%;
 } 
+
+.nav-link a{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+
+.fa-facebook:hover{
+  color: #4267B2;
+}
+.fa-twitter:hover{
+  color: #00ACEE;
+}
+
+.fa-linkedin:hover{
+  color: #0E76A8;
+}
